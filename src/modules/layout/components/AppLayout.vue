@@ -25,7 +25,6 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  border: 2px solid red;
   padding: 18px 48px;
   display: flex;
   align-items: center;
@@ -38,9 +37,5 @@ header {
   font-size: 1.8rem;
   font-weight: bold;
   font-style: italic;
-}
-
-main {
-  border: 2px solid blue;
 }
 </style>
