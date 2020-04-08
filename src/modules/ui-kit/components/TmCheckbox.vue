@@ -2,14 +2,19 @@
   <label class="tm-checkbox">
     <input type="checkbox">
 
-    <span class="text">
+    <div class="text">
       <slot />
-    </span>
+    </div>
   </label>  
 </template>
 
 <style lang="scss" scoped>
 .tm-checkbox {
   cursor: pointer;
+  display: flex;
+}
+
+.text {
+  margin-left: 5px;
 }
 </style>
