@@ -3,15 +3,7 @@
     <header>
       <div class="logo">tmrrw</div>
 
-      <nav>
-        <router-link class="nav-item" #default="{ isExactActive, navigate }" to="/">
-          <TmButton :text="!isExactActive" @click="navigate">Today</TmButton>
-        </router-link>
-
-        <router-link class="nav-item" #default="{ isExactActive, navigate }" to="/tmrrw">
-          <TmButton :text="!isExactActive" @click="navigate">Tomorrow</TmButton>
-        </router-link>
-      </nav>
+      <AppNav />
     </header>
 
     <main>
@@ -21,11 +13,11 @@
 </template>
 
 <script>
-import { TmButton } from '@/modules/ui-kit';
+import AppNav from './AppNav';
 
 export default {
   components: {
-    TmButton,
+    AppNav,
   }
 
 }
@@ -37,27 +29,15 @@ header {
   padding: 18px 48px;
   display: flex;
   align-items: center;
+}
 
-  .logo {
-    position: relative;
-    bottom: 2px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-    font-style: italic;
-  }
-
-  nav {
-    display: flex;
-
-    .nav-item {
-      margin-left: 25px;
-
-      &:first-child {
-        margin-left: 40px;
-      }
-    }
-  }
+.logo {
+  position: relative;
+  bottom: 2px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: italic;
 }
 
 main {
