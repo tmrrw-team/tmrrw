@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { format } from 'date-fns';
 import { TmButton } from '@/modules/ui-kit';
 
 export default {
@@ -23,10 +24,12 @@ export default {
   },
 
   setup() {
+    const todayText = format(new Date(), 'd MMMM, EEEE');
+
     const navData = [
       {
         to: '/',
-        text: 'Today',
+        text: `Today, ${todayText}`,
       },
       {
         to: '/tmrrw',
