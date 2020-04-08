@@ -7,3 +7,9 @@
     </span>
   </label>  
 </template>
+
+<style lang="scss" scoped>
+.tm-checkbox {
+  cursor: pointer;
+}
+</style>

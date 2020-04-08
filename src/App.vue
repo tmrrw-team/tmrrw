@@ -4,12 +4,12 @@
       <div class="logo">tmrrw</div>
 
       <nav>
-        <router-link to="/">
-          Today
+        <router-link class="nav-item" to="/">
+          <TmButton>Today</TmButton>
         </router-link>
 
-        <router-link to="/tmrrw">
-          Tomorrow
+        <router-link class="nav-item" to="/tmrrw">
+          <TmButton text>Tomorrow</TmButton>
         </router-link>
       </nav>
     </header>
@@ -20,24 +20,41 @@
   </div>
 </template>
 
+<script>
+import { TmButton } from '@/modules/ui-kit';
+
+export default {
+  components: {
+    TmButton,
+  }
+  
+}
+</script>
+
 <style lang="scss">
+:root {
+  --accent-color: #0029FF;
+}
+
 body {
   margin: 0;
   font-size: 16px;
-}
 
-#app {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
+#app {
   header {
     border: 2px solid red;
-    padding: 20px 50px;
+    padding: 18px 48px;
     display: flex;
     align-items: center;
 
     .logo {
+      position: relative;
+      bottom: 2px;
       font-family: 'Open Sans', sans-serif;
       font-size: 1.8rem;
       font-weight: bold;
@@ -47,11 +64,11 @@ body {
     nav {
       display: flex;
 
-      a {
+      .nav-item {
         margin-left: 25px;
 
         &:first-child {
-          margin-left: 35px;
+          margin-left: 40px;
         }
       }
     }
