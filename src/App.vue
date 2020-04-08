@@ -1,35 +1,64 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
+    <header>
+      <div class="logo">tmrrw</div>
 
-    <router-view />
+      <nav>
+        <router-link to="/">
+          Today
+        </router-link>
+
+        <router-link to="/tmrrw">
+          Tomorrow
+        </router-link>
+      </nav>
+    </header>
+
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-
-  font-family: 'Roboto', sans-serif;
-  font-family: 'Open Sans', sans-serif;
+body {
+  margin: 0;
+  font-size: 16px;
 }
 
-#nav {
-  padding: 30px;
+#app {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  header {
+    border: 2px solid red;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
 
-    &.router-link-exact-active {
-      color: #42b983;
+    .logo {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+      font-style: italic;
     }
+
+    nav {
+      display: flex;
+
+      a {
+        margin-left: 25px;
+
+        &:first-child {
+          margin-left: 35px;
+        }
+      }
+    }
+  }
+
+  main {
+    border: 2px solid blue;
   }
 }
 </style>

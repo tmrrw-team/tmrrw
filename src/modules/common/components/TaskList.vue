@@ -33,4 +33,8 @@ export default {
   padding: 0;
 }
 
+li {
+  margin: 5px 0;
+}
+
 </style>
