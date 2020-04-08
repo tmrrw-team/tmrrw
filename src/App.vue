@@ -21,8 +21,10 @@ export default {
 }
 
 body {
+  overflow-y: scroll;
   margin: 0;
   font-size: 16px;
+  background: #E5E5E5;
 
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;

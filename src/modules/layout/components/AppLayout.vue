@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app-layout">
     <header>
       <div class="logo">tmrrw</div>
 
@@ -24,6 +24,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.app-layout {
+  background: white;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 header {
   padding: 18px 48px;
   display: flex;
@@ -37,5 +48,10 @@ header {
   font-size: 1.8rem;
   font-weight: bold;
   font-style: italic;
+}
+
+main {
+  flex: 1;
+  display: flex;
 }
 </style>
