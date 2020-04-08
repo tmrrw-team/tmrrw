@@ -4,12 +4,12 @@
       <div class="logo">tmrrw</div>
 
       <nav>
-        <router-link class="nav-item" to="/">
-          <TmButton>Today</TmButton>
+        <router-link class="nav-item" #default="{ isExactActive, navigate }" to="/">
+          <TmButton :text="!isExactActive" @click="navigate">Today</TmButton>
         </router-link>
 
-        <router-link class="nav-item" to="/tmrrw">
-          <TmButton text>Tomorrow</TmButton>
+        <router-link class="nav-item" #default="{ isExactActive, navigate }" to="/tmrrw">
+          <TmButton :text="!isExactActive" @click="navigate">Tomorrow</TmButton>
         </router-link>
       </nav>
     </header>
