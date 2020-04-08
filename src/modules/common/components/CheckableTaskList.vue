@@ -1,11 +1,13 @@
 <template>
-  <ul class="task-list">
-    <li v-for="(item, index) of data" :key="index">
-      <TmCheckbox value="item.done">
-        {{ item.title }}
-      </TmCheckbox>
-    </li>
-  </ul>
+  <div class="checkable-task-list">
+    <ul>
+      <li v-for="(item, index) of data" :key="index">
+        <TmCheckbox value="item.done">
+          {{ item.title }}
+        </TmCheckbox>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -20,14 +22,14 @@ export default {
     data: {
       type: Array,
       required: true
-    }
-  }
+    },
+  },
 
 }
 </script>
 
 <style lang="scss" scoped>
-.task-list {
+ul {
   list-style: none;
   margin: 0;
   padding: 0;
