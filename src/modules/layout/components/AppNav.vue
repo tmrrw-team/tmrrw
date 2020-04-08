@@ -28,11 +28,11 @@ export default {
 
     const navData = [
       {
-        to: '/',
+        to: { name: 'home' },
         text: `Today, ${todayText}`,
       },
       {
-        to: '/tmrrw',
+        to: { name: 'tomorrow' },
         text: 'Tomorrow',
       },
     ];
