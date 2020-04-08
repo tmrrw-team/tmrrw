@@ -1,11 +1,15 @@
 <template>
   <nav class="app-nav">
-    <router-link class="nav-item" #default="{ isExactActive, navigate }" to="/">
-      <TmButton :text="!isExactActive" @click="navigate">Today</TmButton>
-    </router-link>
-
-    <router-link class="nav-item" #default="{ isExactActive, navigate }" to="/tmrrw">
-      <TmButton :text="!isExactActive" @click="navigate">Tomorrow</TmButton>
+    <router-link
+      v-for="(navItem, navItemIndex) of navData"
+      :key="navItemIndex"
+      class="nav-item"
+      #default="{ isExactActive, navigate }"
+      :to="navItem.to"
+    >
+      <TmButton :text="!isExactActive" @click="navigate">
+        {{ navItem.text }}
+      </TmButton>
     </router-link>
   </nav>
 </template>
@@ -16,7 +20,24 @@ import { TmButton } from '@/modules/ui-kit';
 export default {
   components: {
     TmButton,
-  }
+  },
+
+  setup() {
+    const navData = [
+      {
+        to: '/',
+        text: 'Today',
+      },
+      {
+        to: '/tmrrw',
+        text: 'Tomorrow',
+      },
+    ];
+
+    return {
+      navData,
+    };
+  },
 
 }
 </script>
