@@ -1,6 +1,9 @@
 <template>
   <div class="today-tasks">
-    <CheckableTaskList :data="todayTasks" />
+    <CheckableTaskList
+      :data="todayTasks"
+      @toggle-check="toggleCheck"
+    />
   </div>
 </template>
 
@@ -14,10 +17,18 @@ export default {
   },
 
   setup() {
-    const { todayTasks } = useTasks();
+    const { todayTasks, updateTask } = useTasks();
+
+    const toggleCheck = (task) => {
+      updateTask({
+        ...task,
+        done: !task.done,
+      })
+    } 
 
     return {
       todayTasks,
+      toggleCheck,
     }
   }
 

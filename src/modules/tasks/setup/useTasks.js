@@ -26,6 +26,17 @@ const setTasks = (tasks) => {
   saveTasksToLocalStorage(tasks);
 }
 
+const updateTask = (taskToUpdate) => {
+  tasks.value = tasks.value.map(task => {
+    if (task.id !== taskToUpdate.id) {
+      return task;
+    }
+    return taskToUpdate;
+  })
+
+  saveTasksToLocalStorage(tasks.value)
+}
+
 
 const useTasks = () => {
 
@@ -34,6 +45,7 @@ const useTasks = () => {
     todayTasks,
     tomorrowTasks,
     setTasks,
+    updateTask,
   };
 };
 

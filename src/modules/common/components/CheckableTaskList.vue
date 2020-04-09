@@ -2,7 +2,10 @@
   <div class="checkable-task-list">
     <ul v-if="data && data.length">
       <li v-for="(item, index) of data" :key="index">
-        <TmCheckbox value="item.done">
+        <TmCheckbox
+          :checked="item.done"
+          @change="$emit('toggle-check', item)"
+        >
           {{ item.title }}
         </TmCheckbox>
       </li>

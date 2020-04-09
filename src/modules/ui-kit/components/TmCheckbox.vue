@@ -1,12 +1,26 @@
 <template>
   <label class="tm-checkbox">
-    <input type="checkbox">
+    <input type="checkbox"
+      :checked="checked"
+      @change="$emit('change', $event)"
+    >
 
     <div class="text">
       <slot />
     </div>
   </label>  
 </template>
+
+<script>
+export default {
+  props: {
+    checked: {
+      type: Boolean
+    }
+  },
+
+}
+</script>
 
 <style lang="scss" scoped>
 .tm-checkbox {
