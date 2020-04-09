@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app-layout">
     <header>
-      <img src="./img/tmrrw.svg" alt="tmrrw" width="76" height="16" @dblclick="seedTasks">
+      <img src="../assets/tmrrw.svg" alt="tmrrw" width="76" height="16" @dblclick="seedTasks">
 
       <AppNav />
     </header>
