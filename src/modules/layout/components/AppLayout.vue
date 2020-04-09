@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app-layout">
     <header>
-      <div class="logo">tmrrw</div>
+      <div class="logo" @dblclick="seedTasks">tmrrw</div>
 
       <AppNav />
     </header>
@@ -13,11 +13,45 @@
 </template>
 
 <script>
+import { startOfToday } from 'date-fns';
 import AppNav from './AppNav';
+import { newTask, useTasks } from '@/modules/tasks';
 
 export default {
   components: {
     AppNav,
+  },
+
+  setup() {
+    const seedTasks = () => {
+      const { setTasks } = useTasks();
+
+      const todayTasks = [
+        newTask('First task', startOfToday()),
+        newTask('Second task', startOfToday()),
+        newTask(
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit veritatis quasi minus non dignissimos ipsum vel tempore libero sint necessitatibus vero voluptatem ea nemo, esse deserunt! Quasi maxime tempora blanditiis officiis nisi a dolor perferendis distinctio asperiores nulla? Distinctio perferendis odit repellat quae aut architecto fugit nobis sapiente nesciunt.',
+           startOfToday(),
+        ),
+        newTask('Another task', startOfToday()),
+      ]
+
+      const tomorrowTasks = [
+        newTask('Task from the future 1'),
+        newTask('Task from the future 2'),
+      ]
+
+      const tasks = [
+        ...todayTasks,
+        ...tomorrowTasks,
+      ]
+
+      setTasks(tasks)
+    }
+
+    return {
+      seedTasks,
+    }
   }
 
 }

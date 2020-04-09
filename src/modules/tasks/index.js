@@ -1,6 +1,2 @@
-export const newTask = (title) => {
-  return {
-    title,
-    done: false
-  };
-};
+export * from './helpers/index';
+export { default as useTasks } from './setup/useTasks';

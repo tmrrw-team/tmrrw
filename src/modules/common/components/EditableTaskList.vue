@@ -11,6 +11,8 @@
 </template>
 
 <script>
+// import { useTasks } from '@/modules/tasks';
+
 export default {
   props: {
     data: {
@@ -20,6 +22,9 @@ export default {
   },
 
   setup() {
+    // const { tasks } = useTasks();
+    // console.log(tasks.value);
+
     const addTask = () => {
       console.log('TODO: add task')
     }
