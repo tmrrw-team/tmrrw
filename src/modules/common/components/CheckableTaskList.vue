@@ -1,12 +1,14 @@
 <template>
   <div class="checkable-task-list">
-    <ul>
+    <ul v-if="data && data.length">
       <li v-for="(item, index) of data" :key="index">
         <TmCheckbox value="item.done">
           {{ item.title }}
         </TmCheckbox>
       </li>
     </ul>
+
+    <p v-else class="no-tasks">No tasks</p>
   </div>
 </template>
 
@@ -37,5 +39,9 @@ ul {
 
 li {
   margin: 5px 0;
+}
+
+.no-tasks {
+  margin: 0;
 }
 </style>
