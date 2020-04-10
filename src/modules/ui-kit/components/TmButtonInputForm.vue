@@ -49,8 +49,9 @@ export default {
       if (inputValue.value) {
         emit('submit', inputValue.value);
         inputValue.value = '';
+      } else {
+        switchToButtonMode();
       }
-      switchToButtonMode();
     }
 
     return {
