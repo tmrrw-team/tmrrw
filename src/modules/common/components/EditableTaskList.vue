@@ -6,42 +6,27 @@
       </li>
     </ul>
 
-    <form @submit.prevent="tryAddTask">
-      <input type="text" v-model="newTaskTitle">
-      <button class="add-task">Add task</button>
-    </form>
+    <TmButtonInputForm
+      action-text="Add task"
+      @submit="$emit('add-task', $event)"
+    />
   </div>
 </template>
 
 <script>
-import { ref } from '@vue/composition-api';
+import { TmButtonInputForm } from '@/modules/ui-kit';
 
 export default {
+  components: {
+    TmButtonInputForm,
+  },
+
   props: {
     data: {
       type: Array,
       required: true
     },
   },
-
-  setup(props, { emit }) {
-    const newTaskTitle = ref('');
-
-    const tryAddTask = () => {
-      if (!newTaskTitle.value) {
-        return;
-      }
-
-      emit('add-task', newTaskTitle.value);
-
-      newTaskTitle.value = '';
-    }
-
-    return {
-      newTaskTitle,
-      tryAddTask,
-    };
-  }
 
 }
 </script>
@@ -55,14 +40,5 @@ ul {
 
 li {
   margin: 5px 0;
-}
-
-.add-task {
-  color: #B2B2B2;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 0;
 }
 </style>
