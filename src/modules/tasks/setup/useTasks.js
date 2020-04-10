@@ -1,5 +1,5 @@
 import { ref, computed } from '@vue/composition-api';
-import { parseISO, startOfToday, startOfTomorrow, isEqual } from 'date-fns';
+import { startOfToday, startOfTomorrow, isEqual } from 'date-fns';
 
 import {
   loadTasksFromLocalStorage,
@@ -11,19 +11,21 @@ const tasksInitValue = loadTasksFromLocalStorage();
 const tasks = ref(tasksInitValue);
 
 const todayTasks = computed(() => {
-  return tasks.value.filter(task => {
-    return isEqual(parseISO(task.dayX), startOfToday())
-  })
+  return tasks.value.filter(task => isEqual(task.dayX, startOfToday()))
 })
 
 const tomorrowTasks = computed(() => {
-  return tasks.value.filter(task => {
-    return isEqual(parseISO(task.dayX), startOfTomorrow())
-  })
+  return tasks.value.filter(task => isEqual(task.dayX, startOfTomorrow()))
 })
 
 const setTasks = (tasks) => {
   saveTasksToLocalStorage(tasks);
+}
+
+const addTask = (taskToAdd) => {
+  tasks.value = [...tasks.value, taskToAdd]
+
+  setTasks(tasks.value);
 }
 
 const updateTask = (taskToUpdate) => {
@@ -34,7 +36,7 @@ const updateTask = (taskToUpdate) => {
     return taskToUpdate;
   })
 
-  saveTasksToLocalStorage(tasks.value)
+  setTasks(tasks.value);
 }
 
 
@@ -45,6 +47,7 @@ const useTasks = () => {
     todayTasks,
     tomorrowTasks,
     setTasks,
+    addTask,
     updateTask,
   };
 };

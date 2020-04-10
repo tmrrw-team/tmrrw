@@ -6,12 +6,15 @@
       </li>
     </ul>
 
-    <button class="add-task" @click="addTask">Add task</button>
+    <form @submit.prevent="tryAddTask">
+      <input type="text" v-model="newTaskTitle">
+      <button class="add-task">Add task</button>
+    </form>
   </div>
 </template>
 
 <script>
-// import { useTasks } from '@/modules/tasks';
+import { ref } from '@vue/composition-api';
 
 export default {
   props: {
@@ -21,16 +24,22 @@ export default {
     },
   },
 
-  setup() {
-    // const { tasks } = useTasks();
-    // console.log(tasks.value);
+  setup(props, { emit }) {
+    const newTaskTitle = ref('');
 
-    const addTask = () => {
-      console.log('TODO: add task')
+    const tryAddTask = () => {
+      if (!newTaskTitle.value) {
+        return;
+      }
+
+      emit('add-task', newTaskTitle.value);
+
+      newTaskTitle.value = '';
     }
 
     return {
-      addTask,
+      newTaskTitle,
+      tryAddTask,
     };
   }
 

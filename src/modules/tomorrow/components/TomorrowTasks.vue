@@ -1,12 +1,15 @@
 <template>
   <div class="tomorrow-tasks">
-    <EditableTaskList :data="tomorrowTasks" />
+    <EditableTaskList 
+      :data="tomorrowTasks"
+      @add-task="handleAddTask"
+    />
   </div>
 </template>
 
 <script>
 import { EditableTaskList } from '@/modules/common';
-import { useTasks } from '@/modules/tasks';
+import { useTasks, newTask } from '@/modules/tasks';
 
 export default {
   components: {
@@ -14,10 +17,16 @@ export default {
   },
 
   setup() {
-    const { tomorrowTasks } = useTasks();
+    const { tomorrowTasks, addTask } = useTasks();
+
+    const handleAddTask = (title) => {
+      const task = newTask(title);
+      addTask(task);
+    }
 
     return {
       tomorrowTasks,
+      handleAddTask,
     }
   }
   
