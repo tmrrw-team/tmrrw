@@ -32,3 +32,10 @@ export default {
   
 }
 </script>
+
+<style lang="scss" scoped>
+.tomorrow-tasks {
+  flex: 1;
+  display: flex;
+}
+</style>

@@ -11,7 +11,7 @@
       ref="inputRef"
       v-show="isInputMode"
       v-model="inputValue"
-      @blur="switchToButtonMode"
+      @blur="handleInputBlur"
     >
   </form>
 </template>
@@ -54,6 +54,11 @@ export default {
       }
     }
 
+    const handleInputBlur = () => {
+      trySubmit();
+      switchToButtonMode();
+    }
+
     return {
       inputValue,
       isInputMode,
@@ -61,6 +66,7 @@ export default {
       switchToInputMode,
       switchToButtonMode,
       trySubmit,
+      handleInputBlur,
     }
   }
   
@@ -68,6 +74,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+form {
+  display: flex;
+}
+
 button {
   color: #B2B2B2;
   background: none;
@@ -75,5 +85,15 @@ button {
   cursor: pointer;
   font-size: 1rem;
   padding: 0;
+  outline: none;
+}
+
+input {
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  padding: 0;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
 }
 </style>

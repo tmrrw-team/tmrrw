@@ -32,6 +32,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.editable-task-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 ul {
   list-style: none;
   margin: 0;

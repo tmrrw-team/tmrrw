@@ -18,5 +18,7 @@ export default {
 <style lang="scss" scoped>
 .tomorrow {
   padding: 10px 25px;
+  flex: 1;
+  display: flex;
 }
 </style>
