@@ -51,6 +51,7 @@ export default {
 
   .nav-item {
     margin-left: 25px;
+    outline: none;
 
     &:first-child {
       margin-left: 40px;
