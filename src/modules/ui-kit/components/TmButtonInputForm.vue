@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="trySubmit">
+  <form class="tm-button-input-form" @submit.prevent="trySubmit">
     <button type="button"
       v-show="isButtonMode"
       @click="switchToInputMode"
