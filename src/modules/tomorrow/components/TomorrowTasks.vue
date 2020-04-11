@@ -1,6 +1,6 @@
 <template>
   <div class="tomorrow-tasks">
-    <EditableTaskList 
+    <EditableTaskList
       :data="tomorrowTasks"
       @add-task="handleAddTask"
     />

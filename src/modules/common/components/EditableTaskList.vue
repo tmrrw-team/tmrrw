@@ -7,6 +7,7 @@
     </ul>
 
     <TmButtonInputForm
+      class="add-task-form"
       action-text="Add task"
       @submit="$emit('add-task', $event)"
     />
@@ -36,6 +37,7 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding-left: 23px;
 }
 
 ul {
