@@ -1,5 +1,8 @@
 <template>
-  <form class="tm-button-input-form" @submit.prevent="trySubmit">
+  <form class="tm-button-input-form"
+    @submit.prevent="trySubmit"
+    @keyup.esc="handleEscKeyup"
+  >
     <button type="button"
       v-show="isButtonMode"
       @click="switchToInputMode"
@@ -45,18 +48,21 @@ export default {
       isInputMode.value = false;
     }
 
+    const handleInputBlur = () => {
+      switchToButtonMode();
+    }
+
     const trySubmit = () => {
       if (inputValue.value) {
         emit('submit', inputValue.value);
         inputValue.value = '';
       } else {
-        switchToButtonMode();
+        refs.inputRef.blur();
       }
     }
 
-    const handleInputBlur = () => {
-      trySubmit();
-      switchToButtonMode();
+    const handleEscKeyup = () => {
+      refs.inputRef.blur();
     }
 
     return {
@@ -67,6 +73,7 @@ export default {
       switchToButtonMode,
       trySubmit,
       handleInputBlur,
+      handleEscKeyup,
     }
   }
   
