@@ -25,10 +25,23 @@ const setTasks = (tasks) => {
 const addTask = (taskToAdd) => {
   tasks.value = [...tasks.value, taskToAdd]
 
-  setTasks(tasks.value);
+  saveTasksToLocalStorage(tasks.value);
+}
+
+const removeTask = (taskId) => {
+  tasks.value = tasks.value.filter(task => {
+    return task.id !== taskId;
+  })
+
+  saveTasksToLocalStorage(tasks.value);
 }
 
 const updateTask = (taskToUpdate) => {
+  if (!taskToUpdate.title) {
+    removeTask(taskToUpdate.id);
+    return;
+  }
+
   tasks.value = tasks.value.map(task => {
     if (task.id !== taskToUpdate.id) {
       return task;
@@ -36,7 +49,7 @@ const updateTask = (taskToUpdate) => {
     return taskToUpdate;
   })
 
-  setTasks(tasks.value);
+  saveTasksToLocalStorage(tasks.value);
 }
 
 
@@ -49,6 +62,7 @@ const useTasks = () => {
     setTasks,
     addTask,
     updateTask,
+    removeTask,
   };
 };
 

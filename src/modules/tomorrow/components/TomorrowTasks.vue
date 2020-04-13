@@ -3,6 +3,7 @@
     <EditableTaskList
       :data="tomorrowTasks"
       @add-task="handleAddTask"
+      @edit-task="handleEditTask"
     />
   </div>
 </template>
@@ -17,16 +18,21 @@ export default {
   },
 
   setup() {
-    const { tomorrowTasks, addTask } = useTasks();
+    const { tomorrowTasks, addTask, updateTask } = useTasks();
 
     const handleAddTask = (title) => {
       const task = newTask(title);
       addTask(task);
     }
 
+    const handleEditTask = (task) => {
+      updateTask(task);
+    }
+
     return {
       tomorrowTasks,
       handleAddTask,
+      handleEditTask,
     }
   }
   

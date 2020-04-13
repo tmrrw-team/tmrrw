@@ -2,9 +2,10 @@
   <div class="editable-task-list">
     <ul>
       <li v-for="(item, index) of data" :key="index">
-        <TmTextInputForm>
-          {{ item.title }}
-        </TmTextInputForm>
+        <EditableTaskItem
+          :value="item.title"
+          @update="$emit('edit-task', { ...item, title: $event })"  
+        />
       </li>
     </ul>
 
@@ -18,12 +19,12 @@
 
 <script>
 import { TmButtonInputForm } from '@/modules/ui-kit';
-import { TmTextInputForm } from '@/modules/ui-kit';
+import EditableTaskItem from './EditableTaskItem';
 
 export default {
   components: {
     TmButtonInputForm,
-    TmTextInputForm,
+    EditableTaskItem,
   },
 
   props: {
