@@ -1,14 +1,16 @@
 <template>
   <div id="app" class="app-layout">
     <header>
-      <img src="../assets/tmrrw.svg" alt="tmrrw" width="76" height="16" @dblclick="seedTasks">
-
       <AppNav />
     </header>
 
     <main>
       <slot />
     </main>
+
+    <footer>
+      <img src="../assets/tmrrw.svg" alt="tmrrw" width="76" height="16" @dblclick="seedTasks">
+    </footer>
   </div>
 </template>
 
