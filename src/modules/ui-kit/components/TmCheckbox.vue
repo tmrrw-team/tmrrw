@@ -26,6 +26,7 @@ export default {
 .tm-checkbox {
   cursor: pointer;
   display: flex;
+  align-items: self-start;
 }
 
 .text {

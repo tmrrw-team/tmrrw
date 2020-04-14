@@ -4,6 +4,9 @@
       :data="todayTasks"
       @toggle-check="toggleCheck"
     />
+    <div class="resume">
+      You've done {{todayTasks.filter((task) => task.done === true).length}} tasks of {{todayTasks.length}}
+    </div>
   </div>
 </template>
 
@@ -24,13 +27,20 @@ export default {
         ...task,
         done: !task.done,
       })
-    } 
+    }
 
     return {
       todayTasks,
-      toggleCheck,
+      toggleCheck
     }
   }
 
 }
 </script>
+
+<style lang="scss" scoped>
+.resume {
+  color: var(--additional-text-color);
+  font-size: 0.8rem;
+}
+</style>

@@ -19,39 +19,17 @@
         <img src="../assets/tomorrow.svg" alt="Checkbox" width="20" height="20">
       </div>
       <div>
-        Tomorrow
+        In The Future
       </div>
     </router-link>
   </nav>
 </template>
 
-<script>
-export default {
-  setup() {
-    const navData = [
-      {
-        to: { name: 'home' },
-        text: `Today`,
-      },
-      {
-        to: { name: 'tomorrow' },
-        text: 'Tomorrow',
-      },
-    ];
-
-    return {
-      navData,
-    };
-  },
-
-}
-</script>
-
 <style lang="scss" scoped>
 .app-nav {
   display: flex;
   width: 100%;
-  border-top: 1px solid gray;
+  border-top: 1px solid var(--border-color);
 
   .nav-item {
     display: block;
@@ -60,11 +38,11 @@ export default {
     font-size: 0.8rem;
     width: 50%;
     outline: none;
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
 
     &:first-child {
-      border-right: 1px solid gray;
+      border-right: 1px solid var(--border-color);
     }
   }
 

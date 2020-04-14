@@ -41,7 +41,7 @@ ul {
 }
 
 li {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .no-tasks {

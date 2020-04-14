@@ -20,6 +20,8 @@ export default {
   --accent-color: #0E5ADD;
   --background-color: #FFFFFF;
   --text-color: #000000;
+  --additional-text-color: #B2B2B2;
+  --border-color: #B2B2B2;
 }
 
 @media (prefers-color-scheme: dark) {

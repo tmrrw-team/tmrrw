@@ -10,7 +10,6 @@
     </ul>
 
     <TmButtonInputForm
-      class="add-task-form"
       action-text="Add task"
       @submit="$emit('add-task', $event)"
     />
@@ -51,6 +50,6 @@ ul {
 }
 
 li {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 </style>

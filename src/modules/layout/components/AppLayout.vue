@@ -80,7 +80,7 @@ main {
 }
 
 .powered-by {
-  color: gray;
+  color: var(--additional-text-color);
   font-size: 0.8rem;
   padding: 15px 25px;
 }

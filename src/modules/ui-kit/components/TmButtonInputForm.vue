@@ -83,10 +83,11 @@ export default {
 <style lang="scss" scoped>
 form {
   display: flex;
+  width: 100%;
 }
 
 button {
-  color: #B2B2B2;
+  color: var(--additional-text-color);
   background: none;
   border: none;
   cursor: pointer;
