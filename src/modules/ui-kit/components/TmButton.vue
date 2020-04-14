@@ -21,13 +21,11 @@ export default {
 
 <style lang="scss" scoped>
 .tm-button {
-  font-family: 'Roboto', sans-serif;
   font-size: 0.9rem;
-  background: var(--accent-color);
-  color: white;
+  background: none;
+  color: var(--accent-color);
   border: none;
-  padding: 5px 15px;
-  border-radius: 5px;
+  padding: 15px 5px;
   cursor: pointer;
 }
 

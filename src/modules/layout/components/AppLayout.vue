@@ -1,15 +1,16 @@
 <template>
   <div id="app" class="app-layout">
-    <header>
-      <AppNav />
-    </header>
-
     <main>
       <slot />
     </main>
 
+    <div class="powered-by" @click="seedTasks">
+        Powered by
+        <img src="../assets/tmrrw.svg" alt="tmrrw" width="38" height="8">
+    </div>
+
     <footer>
-      <img src="../assets/tmrrw.svg" alt="tmrrw" width="76" height="16" @dblclick="seedTasks">
+      <AppNav />
     </footer>
   </div>
 </template>
@@ -73,23 +74,14 @@ export default {
   flex-direction: column;
 }
 
-header {
-  padding: 18px 48px;
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  position: relative;
-  bottom: 2px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.8rem;
-  font-weight: bold;
-  font-style: italic;
-}
-
 main {
   flex: 1;
   display: flex;
+}
+
+.powered-by {
+  color: gray;
+  font-size: 0.8rem;
+  padding: 15px 25px;
 }
 </style>

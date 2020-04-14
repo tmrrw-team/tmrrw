@@ -101,6 +101,5 @@ input {
   font-size: 1rem;
   padding: 0;
   outline: none;
-  font-family: 'Roboto', sans-serif;
 }
 </style>

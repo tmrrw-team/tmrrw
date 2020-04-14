@@ -17,7 +17,17 @@ export default {
 
 <style lang="scss">
 :root {
-  --accent-color: #0029FF;
+  --accent-color: #0E5ADD;
+  --background-color: #FFFFFF;
+  --text-color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-color: rgb(80, 131, 219);
+    --background-color: #222222;
+    --text-color: #EEEEEE;
+  }
 }
 
 body {
@@ -25,7 +35,9 @@ body {
   margin: 0;
   font-size: 16px;
   background: #E5E5E5;
+}
 
+body, button, input {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF UI Text", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

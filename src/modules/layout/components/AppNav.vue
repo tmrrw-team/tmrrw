@@ -1,35 +1,37 @@
 <template>
   <nav class="app-nav">
     <router-link
-      v-for="(navItem, navItemIndex) of navData"
-      :key="navItemIndex"
       class="nav-item"
-      #default="{ isExactActive, navigate }"
-      :to="navItem.to"
+      :to="{ name: 'home' }"
     >
-      <TmButton :text="!isExactActive" @click="navigate">
-        {{ navItem.text }}
-      </TmButton>
+      <div>
+        <img src="../assets/today.svg" alt="Checkbox" width="20" height="20">
+      </div>
+      <div>
+        Today
+      </div> 
+    </router-link>
+    <router-link
+      class="nav-item"
+      :to="{ name: 'tomorrow' }"
+    >
+      <div>
+        <img src="../assets/tomorrow.svg" alt="Checkbox" width="20" height="20">
+      </div>
+      <div>
+        Tomorrow
+      </div>
     </router-link>
   </nav>
 </template>
 
 <script>
-import { format } from 'date-fns';
-import { TmButton } from '@/modules/ui-kit';
-
 export default {
-  components: {
-    TmButton,
-  },
-
   setup() {
-    const todayText = format(new Date(), 'd MMMM, EEEE');
-
     const navData = [
       {
         to: { name: 'home' },
-        text: `Today, ${todayText}`,
+        text: `Today`,
       },
       {
         to: { name: 'tomorrow' },
@@ -48,14 +50,27 @@ export default {
 <style lang="scss" scoped>
 .app-nav {
   display: flex;
+  width: 100%;
+  border-top: 1px solid gray;
 
   .nav-item {
-    margin-left: 25px;
+    display: block;
+    padding: 7px;
+    text-align: center;
+    font-size: 0.8rem;
+    width: 50%;
     outline: none;
+    color: black;
+    text-decoration: none;
 
     &:first-child {
-      margin-left: 40px;
+      border-right: 1px solid gray;
     }
+  }
+
+  .router-link-exact-active {
+    color: var(--accent-color);
+    font-weight: bold;
   }
 }
 </style>
