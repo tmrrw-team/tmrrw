@@ -16,7 +16,7 @@
       :to="{ name: 'tomorrow' }"
     >
       <div>
-        <img src="../assets/tomorrow.svg" alt="Checkbox" width="20" height="20">
+        <img src="../assets/tomorrow.svg" alt="Plus" width="20" height="20">
       </div>
       <div>
         In The Future
@@ -30,6 +30,7 @@
   display: flex;
   width: 100%;
   border-top: 1px solid var(--border-color);
+  background: var(--background-color);
 
   .nav-item {
     display: block;

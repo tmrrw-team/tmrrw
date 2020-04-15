@@ -64,13 +64,13 @@ export default {
 
 <style lang="scss" scoped>
 .app-layout {
-  background: white;
+  background: var(--background-color);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 55px);
   flex-direction: column;
 }
 
@@ -83,5 +83,12 @@ main {
   color: var(--additional-text-color);
   font-size: 0.8rem;
   padding: 15px 25px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 600px;
+  max-width: 100%;
 }
 </style>

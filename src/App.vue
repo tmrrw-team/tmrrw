@@ -24,14 +24,6 @@ export default {
   --border-color: #B2B2B2;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --accent-color: rgb(80, 131, 219);
-    --background-color: #222222;
-    --text-color: #EEEEEE;
-  }
-}
-
 body {
   overflow-y: scroll;
   margin: 0;
@@ -39,9 +31,22 @@ body {
   background: #E5E5E5;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+      --accent-color: rgb(80, 131, 219);
+      --background-color: #222222;
+      --text-color: #EEEEEE;
+    }
+
+    body {
+      background: darkgray;
+    }
+}
+
 body, button, input {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF UI Text", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color)
 }
 </style>
