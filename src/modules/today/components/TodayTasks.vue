@@ -5,7 +5,7 @@
       @toggle-check="toggleCheck"
     />
     <div class="resume">
-      You've done {{todayTasks.filter((task) => task.done === true).length}} tasks of {{todayTasks.length}}
+      You've done {{ todayDoneTasks.length }} tasks of {{ todayTasks.length }}
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
 
   setup() {
-    const { todayTasks, updateTask } = useTasks();
+    const { todayTasks, todayDoneTasks, updateTask } = useTasks();
 
     const toggleCheck = (task) => {
       updateTask({
@@ -31,7 +31,8 @@ export default {
 
     return {
       todayTasks,
-      toggleCheck
+      todayDoneTasks,
+      toggleCheck,
     }
   }
 

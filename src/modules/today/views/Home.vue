@@ -1,5 +1,5 @@
 <template>
-  <div class="home" v-touch:swipe="swipeHandler">
+  <div class="home" v-touch:swipe.left="handleSwipeLeft">
     <TodayTasks />
   </div>
 </template>
@@ -12,15 +12,13 @@ export default {
   components: {
     TodayTasks,  
   },
-  setup(props, vm) {
-    const swipeHandler = (swipe) => {
-      if (swipe === 'left') {
-        vm.root.$options.router.push({name: 'tomorrow'})
-      }
+  setup(props, { root }) {
+    const handleSwipeLeft = () => {
+      root.$router.push({ name: 'tomorrow' })
     }
 
     return {
-      swipeHandler
+      handleSwipeLeft,
     }
   }
 }

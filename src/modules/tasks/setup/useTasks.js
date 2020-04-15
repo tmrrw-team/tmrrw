@@ -18,6 +18,10 @@ const tomorrowTasks = computed(() => {
   return tasks.value.filter(task => isEqual(task.dayX, startOfTomorrow()))
 })
 
+const todayDoneTasks = computed(() => {
+  return todayTasks.value.filter(task => task.done === true);
+})
+
 const setTasks = (tasks) => {
   saveTasksToLocalStorage(tasks);
 }
@@ -59,6 +63,7 @@ const useTasks = () => {
     tasks,
     todayTasks,
     tomorrowTasks,
+    todayDoneTasks,
     setTasks,
     addTask,
     updateTask,
