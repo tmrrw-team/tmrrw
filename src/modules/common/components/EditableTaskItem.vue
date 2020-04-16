@@ -1,6 +1,7 @@
 <template>
   <span>
     <img class="sort-icon" src="../assets/sorticon.svg" alt="Sort Icon" width="11" height="5" />
+    
     <span
       class="editable-task-item"
       contenteditable
