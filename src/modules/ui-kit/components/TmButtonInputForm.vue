@@ -7,7 +7,7 @@
       v-show="isButtonMode"
       @click="switchToInputMode"
     >
-      {{ actionText }}
+      <slot />
     </button>
 
     <input type="text"
@@ -23,13 +23,6 @@
 import { ref, computed } from '@vue/composition-api';
 
 export default {
-  props: {
-    actionText: {
-      type: String,
-      required: true
-    }
-  },
-
   setup(props, { emit, refs, root }) {
     const inputValue = ref('');
     const isInputMode = ref(false);
