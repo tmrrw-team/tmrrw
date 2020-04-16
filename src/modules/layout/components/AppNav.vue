@@ -11,6 +11,7 @@
         Today
       </div> 
     </router-link>
+
     <router-link
       class="nav-item"
       :to="{ name: 'tomorrow' }"

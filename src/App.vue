@@ -32,15 +32,15 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-      --accent-color: rgb(80, 131, 219);
-      --background-color: #222222;
-      --text-color: #EEEEEE;
-    }
+  :root {
+    --accent-color: rgb(80, 131, 219);
+    --background-color: #222222;
+    --text-color: #EEEEEE;
+  }
 
-    body {
-      background: darkgray;
-    }
+  body {
+    background: darkgray;
+  }
 }
 
 body, button, input {

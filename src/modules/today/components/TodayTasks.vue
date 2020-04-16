@@ -4,8 +4,18 @@
       :data="todayTasks"
       @toggle-check="toggleCheck"
     />
+
     <div class="resume">
       You've done {{ todayDoneTasks.length }} tasks of {{ todayTasks.length }}
+    </div>
+
+    <div v-if="pastTasks.length" class="past-tasks">
+      <h2>Past tasks</h2>
+      
+      <CheckableTaskList
+        :data="pastTasks"
+        @toggle-check="toggleCheck"
+      />
     </div>
   </div>
 </template>
@@ -20,7 +30,12 @@ export default {
   },
 
   setup() {
-    const { todayTasks, todayDoneTasks, updateTask } = useTasks();
+    const {
+      todayTasks,
+      todayDoneTasks,
+      pastTasks,
+      updateTask,
+    } = useTasks();
 
     const toggleCheck = (task) => {
       updateTask({
@@ -31,6 +46,7 @@ export default {
 
     return {
       todayTasks,
+      pastTasks,
       todayDoneTasks,
       toggleCheck,
     }
@@ -43,5 +59,14 @@ export default {
 .resume {
   color: var(--additional-text-color);
   font-size: 0.8rem;
+}
+
+.past-tasks {
+  h2 {
+    font-size: 1rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 0 25px;
+  }
 }
 </style>

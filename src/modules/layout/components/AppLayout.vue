@@ -4,19 +4,19 @@
       <slot />
     </main>
 
-    <div class="powered-by" @click="seedTasks">
+    <footer>
+      <div class="powered-by" @click="seedTasks">
         Powered by
         <img src="../assets/tmrrw.svg" alt="tmrrw" width="38" height="8">
-    </div>
+      </div>
 
-    <footer>
       <AppNav />
     </footer>
   </div>
 </template>
 
 <script>
-import { startOfToday } from 'date-fns';
+import { startOfToday, startOfYesterday } from 'date-fns';
 import AppNav from './AppNav';
 import { newTask, useTasks } from '@/modules/tasks';
 
@@ -28,6 +28,11 @@ export default {
   setup() {
     const seedTasks = () => {
       const { setTasks } = useTasks();
+
+      const pastTasks = [
+        newTask('Task from the past 1', startOfYesterday()),
+        newTask('Task from the past 2', startOfYesterday()),
+      ]
 
       const todayTasks = [
         newTask('First task', startOfToday()),
@@ -45,6 +50,7 @@ export default {
       ]
 
       const tasks = [
+        ...pastTasks,
         ...todayTasks,
         ...tomorrowTasks,
       ]
@@ -70,19 +76,21 @@ export default {
   margin-right: auto;
 
   display: flex;
-  min-height: calc(100vh - 55px);
+  min-height: 100vh;
   flex-direction: column;
 }
 
 main {
   flex: 1;
   display: flex;
+  padding-bottom: 102px;
 }
 
 .powered-by {
   color: var(--additional-text-color);
   font-size: 0.8rem;
   padding: 15px 25px;
+  background: linear-gradient(transparent 10%, white 30%);
 }
 
 footer {
