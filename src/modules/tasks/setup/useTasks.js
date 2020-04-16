@@ -1,5 +1,10 @@
 import { ref, computed } from '@vue/composition-api';
-import { startOfToday, startOfTomorrow, isEqual } from 'date-fns';
+import {
+  startOfToday,
+  startOfTomorrow,
+  isEqual,
+  isBefore,
+} from 'date-fns';
 
 import {
   loadTasksFromLocalStorage,
@@ -9,6 +14,10 @@ import {
 const tasksInitValue = loadTasksFromLocalStorage();
 
 const tasks = ref(tasksInitValue);
+
+const pastTasks = computed(() => {
+  return tasks.value.filter(task => isBefore(task.dayX, startOfToday()))
+})
 
 const todayTasks = computed(() => {
   return tasks.value.filter(task => isEqual(task.dayX, startOfToday()))
@@ -61,6 +70,7 @@ const useTasks = () => {
 
   return {
     tasks,
+    pastTasks,
     todayTasks,
     tomorrowTasks,
     todayDoneTasks,
