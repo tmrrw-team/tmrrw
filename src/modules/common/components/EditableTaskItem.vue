@@ -1,20 +1,30 @@
 <template>
-  <span>
-    <img class="sort-icon" src="../assets/sorticon.svg" alt="Sort Icon" width="11" height="5" />
+  <span class="editable-task-item">
+    <div class="icon-box">
+      <SortIcon class="sort-icon" />
+    </div>
     
-    <span
-      class="editable-task-item"
-      contenteditable
-      ref="contentRef"
-      v-text="value"
-      @blur="handleBlur"
-      @keydown.enter.esc="handleEnterEscKeydown"
-    />
+    <div class="text-box">
+      <span
+        contenteditable
+        class="text"
+        ref="contentRef"
+        v-text="value"
+        @blur="handleBlur"
+        @keydown.enter.esc="handleEnterEscKeydown"
+      />
+    </div>
   </span>
 </template>
 
 <script>
+import { SortIcon } from '@/modules/ui-kit';
+
 export default {
+  components: {
+    SortIcon,
+  },
+
   props: {
     value: {
       type: String,
@@ -42,13 +52,21 @@ export default {
 
 <style lang="scss" scoped>
 .editable-task-item {
-  outline: none;
+  display: flex;
+  align-items: flex-start;
+}
+
+.icon-box {
+  flex-basis: 20px;
 }
 
 .sort-icon {
-  padding-right: 5px;
   position: relative;
-  top: -3px;
-  cursor: move;
+  bottom: 1px;
 }
+
+.text {
+  outline: none;
+}
+
 </style>

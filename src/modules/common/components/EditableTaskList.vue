@@ -9,20 +9,20 @@
       </li>
     </ul>
 
-    <TmButtonInputForm
-      action-text="Add task"
-      @submit="$emit('add-task', $event)"
-    />
+    <TmButtonInputForm @submit="$emit('add-task', $event)">
+      <PlusIcon />Add task
+    </TmButtonInputForm>
   </div>
 </template>
 
 <script>
-import { TmButtonInputForm } from '@/modules/ui-kit';
+import { TmButtonInputForm, PlusIcon } from '@/modules/ui-kit';
 import EditableTaskItem from './EditableTaskItem';
 
 export default {
   components: {
     TmButtonInputForm,
+    PlusIcon,
     EditableTaskItem,
   },
 
