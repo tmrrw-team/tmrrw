@@ -1,10 +1,21 @@
-var FtpDeploy = require("ftp-deploy");
-var ftpDeploy = new FtpDeploy();
+const FtpDeploy = require("ftp-deploy");
+const ftpDeploy = new FtpDeploy();
 
-var config = {
-    user: "cy92029_robot",
-    host: "vh190.timeweb.ru",
-    port: 21,
+const fs = require('fs');
+const dotenv = require('dotenv');
+const {
+    DEPLOY_USER,
+    DEPLOY_HOST,
+    DEPLOY_PORT,
+    DEPLOY_PASS,
+} = dotenv.parse(fs.readFileSync('.env.local'));
+
+const config = {
+    user: DEPLOY_USER,
+    host: DEPLOY_HOST,
+    port: DEPLOY_PORT,
+    password: DEPLOY_PASS,
+
     localRoot: __dirname + "/dist",
     remoteRoot: "/",
     // include: ["*", "**/*"],      // this would upload everything except dot files
@@ -18,11 +29,9 @@ var config = {
 };
 
 // use with promises
-ftpDeploy
-    .deploy(config)
+ftpDeploy.deploy(config)
     .then(res => {
         console.log("finished:", res)
         process.exit(0);
     })
     .catch(err => console.log(err));
-
