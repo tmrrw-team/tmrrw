@@ -20,20 +20,21 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue';
+import { ref, computed, nextTick } from 'vue';
 
 export default {
-  setup(props, { emit, refs, root }) {
+  setup(props, context) {
     const inputValue = ref('');
+    const inputRef = ref(null);
     const isInputMode = ref(false);
     const isButtonMode = computed(() => !isInputMode.value);
 
     const switchToInputMode = () => {
       isInputMode.value = true;
 
-      root.$nextTick()
+      nextTick()
         .then(() => {
-          refs.inputRef.focus();
+          inputRef.value.focus();
         })
     }
 
@@ -47,19 +48,20 @@ export default {
 
     const trySubmit = () => {
       if (inputValue.value) {
-        emit('submit', inputValue.value);
+        context.emit('form-submit', inputValue.value);
         inputValue.value = '';
       } else {
-        refs.inputRef.blur();
+        inputRef.value.blur();
       }
     }
 
     const handleEscKeydown = () => {
-      refs.inputRef.blur();
+      inputRef.value.blur();
     }
 
     return {
       inputValue,
+      inputRef,
       isInputMode,
       isButtonMode,
       switchToInputMode,
