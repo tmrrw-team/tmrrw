@@ -6,8 +6,7 @@
 
     <footer>
       <div class="powered-by" @click="seedTasks">
-        Powered by
-        <img src="../assets/tmrrw.svg" alt="tmrrw" width="38" height="8">
+        Powered by <AppLogo class="logo" />
       </div>
 
       <AppNav />
@@ -17,11 +16,13 @@
 
 <script>
 import { startOfToday, startOfYesterday } from 'date-fns';
-import AppNav from './AppNav';
 import { newTask, useTasks } from '@/modules/tasks';
+import AppLogo from './AppLogo';
+import AppNav from './AppNav';
 
 export default {
   components: {
+    AppLogo,
     AppNav,
   },
 
@@ -88,10 +89,18 @@ main {
 }
 
 .powered-by {
+  display: flex;
+  align-items: baseline;
   color: var(--additional-text-color);
   font-size: 0.8rem;
   padding: 15px 25px;
   background: linear-gradient(transparent 10%, white 30%);
+}
+
+.logo {
+  position: relative;
+  top: 1px;
+  left: 4px;
 }
 
 @media (prefers-color-scheme: dark) {
