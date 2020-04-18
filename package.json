@@ -16,8 +16,8 @@
     "dotenv": "^8.2.0",
     "ftp-deploy": "^2.3.7",
     "nanoid": "^3.0.2",
-    "vue": "^3.0.0-beta.1",
-    "vue-router": "^4.0.0-alpha.5",
+    "vue": "^3.0.0-beta.2",
+    "vue-router": "^4.0.0-alpha.7",
     "vue2-touch-events": "^2.2.1"
   },
   "devDependencies": {
@@ -26,13 +26,13 @@
     "@vue/cli-plugin-router": "~4.3.0",
     "@vue/cli-plugin-unit-jest": "~4.3.0",
     "@vue/cli-service": "~4.3.0",
-    "@vue/compiler-sfc": "^3.0.0-beta.1",
+    "@vue/compiler-sfc": "^3.0.0-beta.2",
     "@vue/test-utils": "^2.0.0-alpha.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-alpha.0",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
-    "vue-cli-plugin-vue-next": "~0.1.2"
+    "vue-cli-plugin-vue-next": "^0.1.2"
   }
 }
