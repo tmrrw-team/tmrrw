@@ -31,6 +31,13 @@ body {
   background: #E5E5E5;
 }
 
+body, button, input {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF UI Text", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color)
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --accent-color: rgb(80, 131, 219);
@@ -41,12 +48,9 @@ body {
   body {
     background: darkgray;
   }
-}
 
-body, button, input {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF UI Text", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--text-color)
+  input {
+    background-color: var(--background-color);
+  }
 }
 </style>
