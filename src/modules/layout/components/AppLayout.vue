@@ -94,6 +94,12 @@ main {
   background: linear-gradient(transparent 10%, white 30%);
 }
 
+@media (prefers-color-scheme: dark) {
+  .powered-by {
+    background: linear-gradient(transparent 10%, var(--background-color) 30%);
+  }
+}
+
 footer {
   position: fixed;
   bottom: 0;
