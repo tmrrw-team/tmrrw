@@ -1,14 +1,15 @@
 <template>
   <label class="tm-checkbox">
-    <input type="checkbox"
+    <input
+      type="checkbox"
       :checked="checked"
       @change="$emit('change', $event)"
-    >
+    />
 
     <div class="text">
       <slot />
     </div>
-  </label>  
+  </label>
 </template>
 
 <script>
@@ -17,20 +18,15 @@ export default {
     checked: {
       type: Boolean
     }
-  },
-
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .tm-checkbox {
   cursor: pointer;
-  display: flex;
-  align-items: baseline;
-}
-
-input {
-  flex-basis: 12px;
+  display: grid;
+  grid-template-columns: 20px 1fr;
 }
 
 .text {
