@@ -9,7 +9,7 @@
       </li>
     </ul>
 
-    <TmButtonInputForm @submit="$emit('add-task', $event)">
+    <TmButtonInputForm @form-submit="$emit('add-task', $event)">
       <PlusIcon />Add task
     </TmButtonInputForm>
   </div>

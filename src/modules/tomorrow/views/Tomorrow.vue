@@ -1,5 +1,7 @@
 <template>
-  <div class="tomorrow" v-touch:swipe.right="handleSwipeRight">
+  <!-- v-touch:swipe.right="handleSwipeRight" -->
+  <div class="tomorrow"
+  >
     <TomorrowTasks />
   </div>
 </template>

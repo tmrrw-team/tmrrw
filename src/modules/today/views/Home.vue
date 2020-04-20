@@ -1,5 +1,7 @@
 <template>
-  <div class="home" v-touch:swipe.left="handleSwipeLeft">
+  <!-- v-touch:swipe.left="handleSwipeLeft" -->
+  <div class="home"
+  >
     <TodayTasks />
   </div>
 </template>

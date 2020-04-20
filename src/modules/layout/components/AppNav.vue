@@ -4,27 +4,32 @@
       class="nav-item"
       :to="{ name: 'home' }"
     >
-      <div>
-        <img src="../assets/today.svg" alt="Checkbox" width="20" height="20">
-      </div>
-      <div>
-        Today
-      </div> 
+      <CheckIcon />
+      <div>Today</div>
     </router-link>
 
     <router-link
       class="nav-item"
       :to="{ name: 'tomorrow' }"
     >
-      <div>
-        <img src="../assets/tomorrow.svg" alt="Plus" width="20" height="20">
-      </div>
-      <div>
-        In The Future
-      </div>
+      <PlusIcon />
+      <div>In The Future</div>
     </router-link>
   </nav>
 </template>
+
+<script>
+import CheckIcon from './CheckIcon';
+import PlusIcon from './PlusIcon';
+
+export default {
+  components: {
+    CheckIcon,
+    PlusIcon,
+  }
+  
+}
+</script>
 
 <style lang="scss" scoped>
 .app-nav {
