@@ -76,7 +76,7 @@ export default {
 main {
   flex: 1;
   display: flex;
-  padding-bottom: 102px;
+  padding-bottom: 56px;
 }
 
 footer {
