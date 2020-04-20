@@ -42,5 +42,6 @@ li {
 
 .no-tasks {
   margin: 0;
+  padding-left: 25px;
 }
 </style>
