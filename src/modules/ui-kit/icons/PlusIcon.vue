@@ -5,12 +5,17 @@
 </template>
 
 <script>
-import IconContainer from './IconContainer';
+import IconContainer from './IconContainer'
 
 export default {
   components: {
-    IconContainer,
+    IconContainer
   }
-  
 }
 </script>
+
+<style lang="scss" scoped>
+.plus-icon {
+  width: 25px;
+}
+</style>

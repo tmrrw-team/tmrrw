@@ -3,7 +3,7 @@
     <div class="icon-box">
       <SortIcon class="sort-icon" />
     </div>
-    
+
     <div class="text-box">
       <span
         contenteditable
@@ -18,50 +18,45 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import { SortIcon } from '@/modules/ui-kit';
+import { ref } from 'vue'
+import { SortIcon } from '@/modules/ui-kit'
 
 export default {
   components: {
-    SortIcon,
+    SortIcon
   },
 
   props: {
     value: {
       type: String,
       required: true
-    },
+    }
   },
 
   setup(props, { emit }) {
-    const contentRef = ref(null);
+    const contentRef = ref(null)
 
-    const handleBlur = (event) => {
+    const handleBlur = event => {
       emit('update', event.target.textContent)
     }
 
     const handleEnterEscKeydown = () => {
-      contentRef.value.blur();
+      contentRef.value.blur()
     }
 
     return {
       contentRef,
       handleBlur,
-      handleEnterEscKeydown,
+      handleEnterEscKeydown
     }
   }
-
 }
 </script>
 
 <style lang="scss" scoped>
 .editable-task-item {
-  display: flex;
-  align-items: flex-start;
-}
-
-.icon-box {
-  flex-basis: 20px;
+  display: grid;
+  grid-template-columns: 25px 1fr;
 }
 
 .sort-icon {
@@ -72,5 +67,4 @@ export default {
 .text {
   outline: none;
 }
-
 </style>
