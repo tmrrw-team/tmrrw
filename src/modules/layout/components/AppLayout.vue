@@ -5,34 +5,28 @@
     </main>
 
     <footer>
-      <div class="powered-by" @click="seedTasks">
-        Powered by <AppLogo class="logo" />
-      </div>
-
       <AppNav />
     </footer>
   </div>
 </template>
 
 <script>
-import { startOfToday, startOfYesterday } from 'date-fns';
-import { newTask, useTasks } from '@/modules/tasks';
-import AppLogo from './AppLogo';
-import AppNav from './AppNav';
+import { startOfToday, startOfYesterday } from 'date-fns'
+import { newTask, useTasks } from '@/modules/tasks'
+import AppNav from './AppNav'
 
 export default {
   components: {
-    AppLogo,
-    AppNav,
+    AppNav
   },
 
   setup() {
     const seedTasks = () => {
-      const { setTasks } = useTasks();
+      const { setTasks } = useTasks()
 
       const pastTasks = [
         newTask('Task from the past 1', startOfYesterday()),
-        newTask('Task from the past 2', startOfYesterday()),
+        newTask('Task from the past 2', startOfYesterday())
       ]
 
       const todayTasks = [
@@ -40,33 +34,30 @@ export default {
         newTask('Second task', startOfToday()),
         newTask(
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit veritatis quasi minus non dignissimos ipsum vel tempore libero sint necessitatibus vero voluptatem ea nemo, esse deserunt! Quasi maxime tempora blanditiis officiis nisi a dolor perferendis distinctio asperiores nulla? Distinctio perferendis odit repellat quae aut architecto fugit nobis sapiente nesciunt.',
-           startOfToday(),
+          startOfToday()
         ),
-        newTask('Another task', startOfToday()),
+        newTask('Another task', startOfToday())
       ]
 
       const tomorrowTasks = [
         newTask('Task from the future 1'),
-        newTask('Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit veritatis quasi minus non dignissimos ipsum vel tempore libero sint necessitatibus vero voluptatem ea nemo, esse deserunt! Quasi maxime tempora blanditiis officiis nisi a dolor perferendis distinctio asperiores nulla? Distinctio perferendis odit repellat quae aut architecto fugit nobis sapiente nesciunt.'),
-        newTask('Task from the future 2'),
+        newTask(
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit veritatis quasi minus non dignissimos ipsum vel tempore libero sint necessitatibus vero voluptatem ea nemo, esse deserunt! Quasi maxime tempora blanditiis officiis nisi a dolor perferendis distinctio asperiores nulla? Distinctio perferendis odit repellat quae aut architecto fugit nobis sapiente nesciunt.'
+        ),
+        newTask('Task from the future 2')
       ]
 
-      const tasks = [
-        ...pastTasks,
-        ...todayTasks,
-        ...tomorrowTasks,
-      ]
+      const tasks = [...pastTasks, ...todayTasks, ...tomorrowTasks]
 
       setTasks(tasks)
 
-      location.reload();
+      location.reload()
     }
 
     return {
-      seedTasks,
+      seedTasks
     }
   }
-
 }
 </script>
 
@@ -86,27 +77,6 @@ main {
   flex: 1;
   display: flex;
   padding-bottom: 102px;
-}
-
-.powered-by {
-  display: flex;
-  align-items: baseline;
-  color: var(--additional-text-color);
-  font-size: 0.8rem;
-  padding: 15px 25px;
-  background: linear-gradient(transparent 10%, white 30%);
-}
-
-.logo {
-  position: relative;
-  top: 1px;
-  left: 4px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .powered-by {
-    background: linear-gradient(transparent 10%, var(--background-color) 30%);
-  }
 }
 
 footer {
