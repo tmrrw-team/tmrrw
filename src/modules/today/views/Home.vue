@@ -1,18 +1,22 @@
 <template>
   <!-- v-touch:swipe.left="handleSwipeLeft" -->
-  <div class="home"
-  >
+  <div class="home">
     <TodayTasks />
+    <div class="powered-by" @click="seedTasks">
+      Powered by <AppLogo class="logo" />
+    </div>
   </div>
 </template>
 
 <script>
-import TodayTasks from '../components/TodayTasks';
+import TodayTasks from '../components/TodayTasks'
+import AppLogo from '../components/AppLogo'
 
 export default {
   name: 'Home',
   components: {
-    TodayTasks,  
+    AppLogo,
+    TodayTasks
   },
   setup(props, { root }) {
     const handleSwipeLeft = () => {
@@ -20,7 +24,7 @@ export default {
     }
 
     return {
-      handleSwipeLeft,
+      handleSwipeLeft
     }
   }
 }
