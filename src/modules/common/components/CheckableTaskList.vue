@@ -2,10 +2,7 @@
   <div class="checkable-task-list">
     <ul v-if="data && data.length">
       <li v-for="(item, index) of data" :key="index">
-        <TmCheckbox
-          :checked="item.done"
-          @change="$emit('toggle-check', item)"
-        >
+        <TmCheckbox :checked="item.done" @change="$emit('toggle-check', item)">
           {{ item.title }}
         </TmCheckbox>
       </li>
@@ -20,16 +17,15 @@ import { TmCheckbox } from '@/modules/ui-kit'
 
 export default {
   components: {
-    TmCheckbox,
+    TmCheckbox
   },
 
   props: {
     data: {
       type: Array,
       required: true
-    },
-  },
-
+    }
+  }
 }
 </script>
 
