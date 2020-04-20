@@ -35,4 +35,18 @@ export default {
   padding: 10px 25px;
   width: 100%;
 }
+
+.powered-by {
+  display: flex;
+  align-items: baseline;
+  color: var(--additional-text-color);
+  font-size: 0.8rem;
+  padding: 15px 30px;
+}
+
+.logo {
+  position: relative;
+  top: 1px;
+  left: 4px;
+}
 </style>

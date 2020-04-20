@@ -79,27 +79,6 @@ main {
   padding-bottom: 102px;
 }
 
-.powered-by {
-  display: flex;
-  align-items: baseline;
-  color: var(--additional-text-color);
-  font-size: 0.8rem;
-  padding: 15px 25px;
-  background: linear-gradient(transparent 10%, white 30%);
-}
-
-.logo {
-  position: relative;
-  top: 1px;
-  left: 4px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .powered-by {
-    background: linear-gradient(transparent 10%, var(--background-color) 30%);
-  }
-}
-
 footer {
   position: fixed;
   bottom: 0;
