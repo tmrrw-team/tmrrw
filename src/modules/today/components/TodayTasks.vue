@@ -1,9 +1,6 @@
 <template>
   <div class="today-tasks">
-    <CheckableTaskList
-      :data="todayTasks"
-      @toggle-check="toggleCheck"
-    />
+    <CheckableTaskList :data="todayTasks" @toggle-check="toggleCheck" />
 
     <div class="resume">
       You've done {{ todayDoneTasks.length }} tasks of {{ todayTasks.length }}
@@ -11,36 +8,28 @@
 
     <div v-if="pastTasks.length" class="past-tasks">
       <h2>Past tasks</h2>
-      
-      <CheckableTaskList
-        :data="pastTasks"
-        @toggle-check="toggleCheck"
-      />
+
+      <CheckableTaskList :data="pastTasks" @toggle-check="toggleCheck" />
     </div>
   </div>
 </template>
 
 <script>
-import { CheckableTaskList } from '@/modules/common';
-import { useTasks } from '@/modules/tasks';
+import { CheckableTaskList } from '@/modules/common'
+import { useTasks } from '@/modules/tasks'
 
 export default {
   components: {
-    CheckableTaskList,
+    CheckableTaskList
   },
 
   setup() {
-    const {
-      todayTasks,
-      todayDoneTasks,
-      pastTasks,
-      updateTask,
-    } = useTasks();
+    const { todayTasks, todayDoneTasks, pastTasks, updateTask } = useTasks()
 
-    const toggleCheck = (task) => {
+    const toggleCheck = task => {
       updateTask({
         ...task,
-        done: !task.done,
+        done: !task.done
       })
     }
 
@@ -48,10 +37,9 @@ export default {
       todayTasks,
       pastTasks,
       todayDoneTasks,
-      toggleCheck,
+      toggleCheck
     }
   }
-
 }
 </script>
 
@@ -59,6 +47,7 @@ export default {
 .resume {
   color: var(--additional-text-color);
   font-size: 0.8rem;
+  padding-left: 25px;
 }
 
 .past-tasks {

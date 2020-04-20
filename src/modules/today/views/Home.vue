@@ -3,7 +3,7 @@
   <div class="home">
     <TodayTasks />
     <div class="powered-by" @click="seedTasks">
-      Powered by <AppLogo class="logo" />
+      <AppLogo class="logo" />
     </div>
   </div>
 </template>
@@ -41,7 +41,7 @@ export default {
   align-items: baseline;
   color: var(--additional-text-color);
   font-size: 0.8rem;
-  padding: 15px 30px;
+  padding: 15px 25px;
 }
 
 .logo {
