@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import IconContainer from './IconContainer';
+import IconContainer from './IconContainer'
 
 export default {
   components: {
-    IconContainer,
+    IconContainer
   }
 
 }

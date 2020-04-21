@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { useTasks } from '@/modules/tasks';
+import { useTasks } from '@/modules/tasks'
 import TodayTasks from '../components/TodayTasks'
 import AppLogo from '../components/AppLogo'
 
@@ -20,10 +20,10 @@ export default {
     TodayTasks
   },
   setup(props, { root }) {
-    const { seedTasks } = useTasks();
+    const { seedTasks } = useTasks()
 
     const handleLogoDblClick = () => {
-      seedTasks();
+      seedTasks()
     }
 
     const handleSwipeLeft = () => {

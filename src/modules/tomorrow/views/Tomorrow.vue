@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import TomorrowTasks from '../components/TomorrowTasks';
+import TomorrowTasks from '../components/TomorrowTasks'
 
 export default {
   components: {
-    TomorrowTasks,  
+    TomorrowTasks  
   },
   setup(props, { root }) {
     const handleSwipeRight = () => {

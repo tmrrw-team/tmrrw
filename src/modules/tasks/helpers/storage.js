@@ -1,14 +1,14 @@
-import { parseISO } from 'date-fns';
+import { parseISO } from 'date-fns'
 
-const LS_TASKS_KEY = 'tm-tasks';
+const LS_TASKS_KEY = 'tm-tasks'
 
 export const loadTasksFromLocalStorage = () => {
-  const data = localStorage.getItem(LS_TASKS_KEY);
+  const data = localStorage.getItem(LS_TASKS_KEY)
   if (!data) {
-    return [];
+    return []
   }
 
-  const tasks = JSON.parse(data);
+  const tasks = JSON.parse(data)
   return tasks.map(item => ({
     ...item,
     dayX: parseISO(item.dayX)
@@ -17,7 +17,7 @@ export const loadTasksFromLocalStorage = () => {
 
 export const saveTasksToLocalStorage = (tasks) => {
   // JSON.stringify converts Date to date ISO string
-  const data = JSON.stringify(tasks);
+  const data = JSON.stringify(tasks)
 
-  localStorage.setItem(LS_TASKS_KEY, data);
+  localStorage.setItem(LS_TASKS_KEY, data)
 }

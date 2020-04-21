@@ -16,7 +16,7 @@ import AppNav from './AppNav'
 export default {
   components: {
     AppNav
-  },
+  }
 
 }
 </script>

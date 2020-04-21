@@ -9,30 +9,30 @@
 </template>
 
 <script>
-import { EditableTaskList } from '@/modules/common';
-import { useTasks, newTask } from '@/modules/tasks';
+import { EditableTaskList } from '@/modules/common'
+import { useTasks, newTask } from '@/modules/tasks'
 
 export default {
   components: {
-    EditableTaskList,
+    EditableTaskList
   },
 
   setup() {
-    const { tomorrowTasks, addTask, updateTask } = useTasks();
+    const { tomorrowTasks, addTask, updateTask } = useTasks()
 
     const handleAddTask = (title) => {
-      const task = newTask(title);
-      addTask(task);
+      const task = newTask(title)
+      addTask(task)
     }
 
     const handleEditTask = (task) => {
-      updateTask(task);
+      updateTask(task)
     }
 
     return {
       tomorrowTasks,
       handleAddTask,
-      handleEditTask,
+      handleEditTask
     }
   }
   

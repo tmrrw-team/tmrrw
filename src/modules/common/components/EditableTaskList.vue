@@ -16,22 +16,22 @@
 </template>
 
 <script>
-import { TmButtonInputForm, PlusIcon } from '@/modules/ui-kit';
-import EditableTaskItem from './EditableTaskItem';
+import { TmButtonInputForm, PlusIcon } from '@/modules/ui-kit'
+import EditableTaskItem from './EditableTaskItem'
 
 export default {
   components: {
     TmButtonInputForm,
     PlusIcon,
-    EditableTaskItem,
+    EditableTaskItem
   },
 
   props: {
     data: {
       type: Array,
       required: true
-    },
-  },
+    }
+  }
 
 }
 </script>

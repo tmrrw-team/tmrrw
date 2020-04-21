@@ -1,5 +1,5 @@
 import { startOfToday, startOfYesterday, startOfTomorrow } from 'date-fns'
-import { nanoid } from 'nanoid';
+import { nanoid } from 'nanoid'
 
 export const newTask = (title, dayX = startOfTomorrow()) => {
 
@@ -7,9 +7,9 @@ export const newTask = (title, dayX = startOfTomorrow()) => {
     id: nanoid(),
     title,
     dayX,
-    done: false,
-  };
-};
+    done: false
+  }
+}
 
 export const generateTasks = () => {
   const pastTasks = [

@@ -1,19 +1,19 @@
-import { ref, computed } from 'vue';
+import { ref, computed } from 'vue'
 import {
   startOfToday,
   startOfTomorrow,
   isEqual,
-  isBefore,
-} from 'date-fns';
-import { generateTasks } from '../helpers/index';
+  isBefore
+} from 'date-fns'
+import { generateTasks } from '../helpers/index'
 import {
   loadTasksFromLocalStorage,
-  saveTasksToLocalStorage,
-} from '../helpers/storage';
+  saveTasksToLocalStorage
+} from '../helpers/storage'
 
-const tasksInitValue = loadTasksFromLocalStorage();
+const tasksInitValue = loadTasksFromLocalStorage()
 
-const tasks = ref(tasksInitValue);
+const tasks = ref(tasksInitValue)
 
 const pastTasks = computed(() => {
   return tasks.value.filter(task => isBefore(task.dayX, startOfToday()))
@@ -28,49 +28,49 @@ const tomorrowTasks = computed(() => {
 })
 
 const todayDoneTasks = computed(() => {
-  return todayTasks.value.filter(task => task.done === true);
+  return todayTasks.value.filter(task => task.done === true)
 })
 
 const setTasks = (tasksToSet) => {
-  tasks.value = tasksToSet;
+  tasks.value = tasksToSet
 
-  saveTasksToLocalStorage(tasks.value);
+  saveTasksToLocalStorage(tasks.value)
 }
 
 const seedTasks = () => {
-  const fakeTasks = generateTasks();
+  const fakeTasks = generateTasks()
 
-  setTasks(fakeTasks);
+  setTasks(fakeTasks)
 }
 
 const addTask = (taskToAdd) => {
   tasks.value = [...tasks.value, taskToAdd]
 
-  saveTasksToLocalStorage(tasks.value);
+  saveTasksToLocalStorage(tasks.value)
 }
 
 const removeTask = (taskId) => {
   tasks.value = tasks.value.filter(task => {
-    return task.id !== taskId;
+    return task.id !== taskId
   })
 
-  saveTasksToLocalStorage(tasks.value);
+  saveTasksToLocalStorage(tasks.value)
 }
 
 const updateTask = (taskToUpdate) => {
   if (!taskToUpdate.title) {
-    removeTask(taskToUpdate.id);
-    return;
+    removeTask(taskToUpdate.id)
+    return
   }
 
   tasks.value = tasks.value.map(task => {
     if (task.id !== taskToUpdate.id) {
-      return task;
+      return task
     }
-    return taskToUpdate;
+    return taskToUpdate
   })
 
-  saveTasksToLocalStorage(tasks.value);
+  saveTasksToLocalStorage(tasks.value)
 }
 
 
@@ -86,8 +86,8 @@ const useTasks = () => {
     seedTasks,
     addTask,
     updateTask,
-    removeTask,
-  };
-};
+    removeTask
+  }
+}
 
-export default useTasks;
+export default useTasks
