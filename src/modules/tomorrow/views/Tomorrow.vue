@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import TomorrowTasks from '../components/TomorrowTasks';
+import TomorrowTasks from '../components/TomorrowTasks'
 
 export default {
   components: {
@@ -15,14 +15,14 @@ export default {
   },
   setup(props, { root }) {
     const handleSwipeRight = () => {
-      root.$router.push({ name: 'home' });
-    };
+      root.$router.push({ name: 'home' })
+    }
 
     return {
       handleSwipeRight
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import CheckIcon from './CheckIcon';
-import PlusIcon from './PlusIcon';
+import CheckIcon from './CheckIcon'
+import PlusIcon from './PlusIcon'
 
 export default {
   components: {
@@ -28,7 +28,7 @@ export default {
     PlusIcon
   }
   
-};
+}
 </script>
 
 <style lang="scss" scoped>

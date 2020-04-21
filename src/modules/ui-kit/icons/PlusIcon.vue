@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import IconContainer from './IconContainer';
+import IconContainer from './IconContainer'
 
 export default {
   components: {
     IconContainer
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

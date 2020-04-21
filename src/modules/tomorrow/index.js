@@ -1,1 +1,1 @@
-export { default as Tomorrow } from './views/Tomorrow';
+export { default as Tomorrow } from './views/Tomorrow'

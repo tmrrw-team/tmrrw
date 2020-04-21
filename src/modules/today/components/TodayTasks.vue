@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import { CheckableTaskList } from '@/modules/common';
-import { useTasks } from '@/modules/tasks';
+import { CheckableTaskList } from '@/modules/common'
+import { useTasks } from '@/modules/tasks'
 
 export default {
   components: {
@@ -24,23 +24,23 @@ export default {
   },
 
   setup() {
-    const { todayTasks, todayDoneTasks, pastTasks, updateTask } = useTasks();
+    const { todayTasks, todayDoneTasks, pastTasks, updateTask } = useTasks()
 
     const toggleCheck = task => {
       updateTask({
         ...task,
         done: !task.done
-      });
-    };
+      })
+    }
 
     return {
       todayTasks,
       pastTasks,
       todayDoneTasks,
       toggleCheck
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

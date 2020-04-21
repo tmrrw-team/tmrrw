@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import { AppLayout } from '@/modules/layout';
+import { AppLayout } from '@/modules/layout'
 
 export default {
   components: {
     AppLayout
   }
 
-};
+}
 </script>
 
 <style lang="scss">

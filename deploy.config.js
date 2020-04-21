@@ -1,14 +1,14 @@
-const FtpDeploy = require('ftp-deploy');
-const ftpDeploy = new FtpDeploy();
+const FtpDeploy = require('ftp-deploy')
+const ftpDeploy = new FtpDeploy()
 
-const fs = require('fs');
-const dotenv = require('dotenv');
+const fs = require('fs')
+const dotenv = require('dotenv')
 const {
   DEPLOY_USER,
   DEPLOY_HOST,
   DEPLOY_PORT,
   DEPLOY_PASS
-} = dotenv.parse(fs.readFileSync('.env.local'));
+} = dotenv.parse(fs.readFileSync('.env.local'))
 
 const config = {
   user: DEPLOY_USER,
@@ -26,12 +26,12 @@ const config = {
   deleteRemote: true,
   // Passive mode is forced (EPSV command is not sent)
   forcePasv: true
-};
+}
 
 // use with promises
 ftpDeploy.deploy(config)
   .then(res => {
-    console.log('finished:', res);
-    process.exit(0);
+    console.log('finished:', res)
+    process.exit(0)
   })
-  .catch(err => console.log(err));
+  .catch(err => console.log(err))

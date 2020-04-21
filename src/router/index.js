@@ -1,7 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router'
 
-import { Home } from '@/modules/today';
-import { Tomorrow } from '@/modules/tomorrow';
+import { Home } from '@/modules/today'
+import { Tomorrow } from '@/modules/tomorrow'
 
 const routes = [
   {
@@ -14,11 +14,11 @@ const routes = [
     name: 'tomorrow',
     component: Tomorrow
   }
-];
+]
 
 const router = createRouter({
   history: createWebHashHistory(process.env.BASE_URL),
   routes
-});
+})
 
-export default router;
+export default router

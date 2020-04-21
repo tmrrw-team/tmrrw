@@ -20,44 +20,44 @@
 </template>
 
 <script>
-import { ref, computed, nextTick } from 'vue';
+import { ref, computed, nextTick } from 'vue'
 
 export default {
   setup(props, context) {
-    const inputValue = ref('');
-    const inputRef = ref(null);
-    const isInputMode = ref(false);
-    const isButtonMode = computed(() => !isInputMode.value);
+    const inputValue = ref('')
+    const inputRef = ref(null)
+    const isInputMode = ref(false)
+    const isButtonMode = computed(() => !isInputMode.value)
 
     const switchToInputMode = () => {
-      isInputMode.value = true;
+      isInputMode.value = true
 
       nextTick()
         .then(() => {
-          inputRef.value.focus();
-        });
-    };
+          inputRef.value.focus()
+        })
+    }
 
     const switchToButtonMode = () => {
-      isInputMode.value = false;
-    };
+      isInputMode.value = false
+    }
 
     const handleInputBlur = () => {
-      switchToButtonMode();
-    };
+      switchToButtonMode()
+    }
 
     const trySubmit = () => {
       if (inputValue.value) {
-        context.emit('form-submit', inputValue.value);
-        inputValue.value = '';
+        context.emit('form-submit', inputValue.value)
+        inputValue.value = ''
       } else {
-        inputRef.value.blur();
+        inputRef.value.blur()
       }
-    };
+    }
 
     const handleEscKeydown = () => {
-      inputRef.value.blur();
-    };
+      inputRef.value.blur()
+    }
 
     return {
       inputValue,
@@ -69,10 +69,10 @@ export default {
       trySubmit,
       handleInputBlur,
       handleEscKeydown
-    };
+    }
   }
   
-};
+}
 </script>
 
 <style lang="scss" scoped>

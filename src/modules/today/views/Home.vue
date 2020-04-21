@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import { useTasks } from '@/modules/tasks';
-import TodayTasks from '../components/TodayTasks';
-import AppLogo from '../components/AppLogo';
+import { useTasks } from '@/modules/tasks'
+import TodayTasks from '../components/TodayTasks'
+import AppLogo from '../components/AppLogo'
 
 export default {
   name: 'Home',
@@ -20,22 +20,22 @@ export default {
     TodayTasks
   },
   setup(props, { root }) {
-    const { seedTasks } = useTasks();
+    const { seedTasks } = useTasks()
 
     const handleLogoDblClick = () => {
-      seedTasks();
-    };
+      seedTasks()
+    }
 
     const handleSwipeLeft = () => {
-      root.$router.push({ name: 'tomorrow' });
-    };
+      root.$router.push({ name: 'tomorrow' })
+    }
 
     return {
       handleLogoDblClick,
       handleSwipeLeft
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

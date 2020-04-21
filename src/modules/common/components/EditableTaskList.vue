@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import { TmButtonInputForm, PlusIcon } from '@/modules/ui-kit';
-import EditableTaskItem from './EditableTaskItem';
+import { TmButtonInputForm, PlusIcon } from '@/modules/ui-kit'
+import EditableTaskItem from './EditableTaskItem'
 
 export default {
   components: {
@@ -33,7 +33,7 @@ export default {
     }
   }
 
-};
+}
 </script>
 
 <style lang="scss" scoped>
