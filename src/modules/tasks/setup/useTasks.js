@@ -5,7 +5,7 @@ import {
   isEqual,
   isBefore,
 } from 'date-fns';
-
+import { generateTasks } from '../helpers/index';
 import {
   loadTasksFromLocalStorage,
   saveTasksToLocalStorage,
@@ -31,8 +31,16 @@ const todayDoneTasks = computed(() => {
   return todayTasks.value.filter(task => task.done === true);
 })
 
-const setTasks = (tasks) => {
-  saveTasksToLocalStorage(tasks);
+const setTasks = (tasksToSet) => {
+  tasks.value = tasksToSet;
+
+  saveTasksToLocalStorage(tasks.value);
+}
+
+const seedTasks = () => {
+  const fakeTasks = generateTasks();
+
+  setTasks(fakeTasks);
 }
 
 const addTask = (taskToAdd) => {
@@ -75,6 +83,7 @@ const useTasks = () => {
     tomorrowTasks,
     todayDoneTasks,
     setTasks,
+    seedTasks,
     addTask,
     updateTask,
     removeTask,

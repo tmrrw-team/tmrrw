@@ -2,13 +2,14 @@
   <!-- v-touch:swipe.left="handleSwipeLeft" -->
   <div class="home">
     <TodayTasks />
-    <div class="powered-by" @click="seedTasks">
-      <AppLogo class="logo" />
+    <div class="powered-by">
+      <AppLogo class="logo" @dblclick="handleLogoDblClick" />
     </div>
   </div>
 </template>
 
 <script>
+import { useTasks } from '@/modules/tasks';
 import TodayTasks from '../components/TodayTasks'
 import AppLogo from '../components/AppLogo'
 
@@ -19,11 +20,18 @@ export default {
     TodayTasks
   },
   setup(props, { root }) {
+    const { seedTasks } = useTasks();
+
+    const handleLogoDblClick = () => {
+      seedTasks();
+    }
+
     const handleSwipeLeft = () => {
       root.$router.push({ name: 'tomorrow' })
     }
 
     return {
+      handleLogoDblClick,
       handleSwipeLeft
     }
   }
