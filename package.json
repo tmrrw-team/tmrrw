@@ -16,7 +16,7 @@
     "dotenv": "^8.2.0",
     "ftp-deploy": "^2.3.7",
     "nanoid": "^3.0.2",
-    "vue": "^3.0.0-beta.2",
+    "vue": "^3.0.0-beta.3",
     "vue-router": "^4.0.0-alpha.7",
     "vue2-touch-events": "^2.2.1"
   },
