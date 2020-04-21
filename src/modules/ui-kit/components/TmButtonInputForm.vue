@@ -35,16 +35,16 @@ export default {
       nextTick()
         .then(() => {
           inputRef.value.focus();
-        })
-    }
+        });
+    };
 
     const switchToButtonMode = () => {
       isInputMode.value = false;
-    }
+    };
 
     const handleInputBlur = () => {
       switchToButtonMode();
-    }
+    };
 
     const trySubmit = () => {
       if (inputValue.value) {
@@ -53,11 +53,11 @@ export default {
       } else {
         inputRef.value.blur();
       }
-    }
+    };
 
     const handleEscKeydown = () => {
       inputRef.value.blur();
-    }
+    };
 
     return {
       inputValue,
@@ -68,11 +68,11 @@ export default {
       switchToButtonMode,
       trySubmit,
       handleInputBlur,
-      handleEscKeydown,
-    }
+      handleEscKeydown
+    };
   }
   
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -12,12 +12,12 @@ export const loadTasksFromLocalStorage = () => {
   return tasks.map(item => ({
     ...item,
     dayX: parseISO(item.dayX)
-  }))
-}
+  }));
+};
 
 export const saveTasksToLocalStorage = (tasks) => {
   // JSON.stringify converts Date to date ISO string
   const data = JSON.stringify(tasks);
 
   localStorage.setItem(LS_TASKS_KEY, data);
-}
+};

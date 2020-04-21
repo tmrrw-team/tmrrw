@@ -10,8 +10,8 @@
 
 <script>
 import { useTasks } from '@/modules/tasks';
-import TodayTasks from '../components/TodayTasks'
-import AppLogo from '../components/AppLogo'
+import TodayTasks from '../components/TodayTasks';
+import AppLogo from '../components/AppLogo';
 
 export default {
   name: 'Home',
@@ -24,18 +24,18 @@ export default {
 
     const handleLogoDblClick = () => {
       seedTasks();
-    }
+    };
 
     const handleSwipeLeft = () => {
-      root.$router.push({ name: 'tomorrow' })
-    }
+      root.$router.push({ name: 'tomorrow' });
+    };
 
     return {
       handleLogoDblClick,
       handleSwipeLeft
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

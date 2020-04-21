@@ -23,17 +23,17 @@ export default {
   components: {
     TmButtonInputForm,
     PlusIcon,
-    EditableTaskItem,
+    EditableTaskItem
   },
 
   props: {
     data: {
       type: Array,
       required: true
-    },
-  },
+    }
+  }
 
-}
+};
 </script>
 
 <style lang="scss" scoped>

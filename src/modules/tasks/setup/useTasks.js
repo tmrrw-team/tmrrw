@@ -3,12 +3,12 @@ import {
   startOfToday,
   startOfTomorrow,
   isEqual,
-  isBefore,
+  isBefore
 } from 'date-fns';
 import { generateTasks } from '../helpers/index';
 import {
   loadTasksFromLocalStorage,
-  saveTasksToLocalStorage,
+  saveTasksToLocalStorage
 } from '../helpers/storage';
 
 const tasksInitValue = loadTasksFromLocalStorage();
@@ -16,46 +16,46 @@ const tasksInitValue = loadTasksFromLocalStorage();
 const tasks = ref(tasksInitValue);
 
 const pastTasks = computed(() => {
-  return tasks.value.filter(task => isBefore(task.dayX, startOfToday()))
-})
+  return tasks.value.filter(task => isBefore(task.dayX, startOfToday()));
+});
 
 const todayTasks = computed(() => {
-  return tasks.value.filter(task => isEqual(task.dayX, startOfToday()))
-})
+  return tasks.value.filter(task => isEqual(task.dayX, startOfToday()));
+});
 
 const tomorrowTasks = computed(() => {
-  return tasks.value.filter(task => isEqual(task.dayX, startOfTomorrow()))
-})
+  return tasks.value.filter(task => isEqual(task.dayX, startOfTomorrow()));
+});
 
 const todayDoneTasks = computed(() => {
   return todayTasks.value.filter(task => task.done === true);
-})
+});
 
 const setTasks = (tasksToSet) => {
   tasks.value = tasksToSet;
 
   saveTasksToLocalStorage(tasks.value);
-}
+};
 
 const seedTasks = () => {
   const fakeTasks = generateTasks();
 
   setTasks(fakeTasks);
-}
+};
 
 const addTask = (taskToAdd) => {
-  tasks.value = [...tasks.value, taskToAdd]
+  tasks.value = [...tasks.value, taskToAdd];
 
   saveTasksToLocalStorage(tasks.value);
-}
+};
 
 const removeTask = (taskId) => {
   tasks.value = tasks.value.filter(task => {
     return task.id !== taskId;
-  })
+  });
 
   saveTasksToLocalStorage(tasks.value);
-}
+};
 
 const updateTask = (taskToUpdate) => {
   if (!taskToUpdate.title) {
@@ -68,10 +68,10 @@ const updateTask = (taskToUpdate) => {
       return task;
     }
     return taskToUpdate;
-  })
+  });
 
   saveTasksToLocalStorage(tasks.value);
-}
+};
 
 
 const useTasks = () => {
@@ -86,7 +86,7 @@ const useTasks = () => {
     seedTasks,
     addTask,
     updateTask,
-    removeTask,
+    removeTask
   };
 };
 

@@ -25,10 +25,10 @@ import PlusIcon from './PlusIcon';
 export default {
   components: {
     CheckIcon,
-    PlusIcon,
+    PlusIcon
   }
   
-}
+};
 </script>
 
 <style lang="scss" scoped>

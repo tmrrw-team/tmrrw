@@ -9,10 +9,10 @@ import IconContainer from './IconContainer';
 
 export default {
   components: {
-    IconContainer,
+    IconContainer
   }
 
-}
+};
 </script>
 
 <style lang="scss" scoped>

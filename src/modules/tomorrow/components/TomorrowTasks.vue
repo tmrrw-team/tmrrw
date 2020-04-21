@@ -14,7 +14,7 @@ import { useTasks, newTask } from '@/modules/tasks';
 
 export default {
   components: {
-    EditableTaskList,
+    EditableTaskList
   },
 
   setup() {
@@ -23,20 +23,20 @@ export default {
     const handleAddTask = (title) => {
       const task = newTask(title);
       addTask(task);
-    }
+    };
 
     const handleEditTask = (task) => {
       updateTask(task);
-    }
+    };
 
     return {
       tomorrowTasks,
       handleAddTask,
-      handleEditTask,
-    }
+      handleEditTask
+    };
   }
   
-}
+};
 </script>
 
 <style lang="scss" scoped>

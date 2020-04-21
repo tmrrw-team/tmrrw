@@ -11,18 +11,18 @@ import TomorrowTasks from '../components/TomorrowTasks';
 
 export default {
   components: {
-    TomorrowTasks,  
+    TomorrowTasks  
   },
   setup(props, { root }) {
     const handleSwipeRight = () => {
-      root.$router.push({ name: 'home' })
-    }
+      root.$router.push({ name: 'home' });
+    };
 
     return {
       handleSwipeRight
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>

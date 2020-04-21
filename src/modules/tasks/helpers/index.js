@@ -1,4 +1,4 @@
-import { startOfToday, startOfYesterday, startOfTomorrow } from 'date-fns'
+import { startOfToday, startOfYesterday, startOfTomorrow } from 'date-fns';
 import { nanoid } from 'nanoid';
 
 export const newTask = (title, dayX = startOfTomorrow()) => {
@@ -7,7 +7,7 @@ export const newTask = (title, dayX = startOfTomorrow()) => {
     id: nanoid(),
     title,
     dayX,
-    done: false,
+    done: false
   };
 };
 
@@ -15,7 +15,7 @@ export const generateTasks = () => {
   const pastTasks = [
     newTask('Task from the past 1', startOfYesterday()),
     newTask('Task from the past 2', startOfYesterday())
-  ]
+  ];
 
   const todayTasks = [
     newTask('First task', startOfToday()),
@@ -25,7 +25,7 @@ export const generateTasks = () => {
       startOfToday()
     ),
     newTask('Another task', startOfToday())
-  ]
+  ];
 
   const tomorrowTasks = [
     newTask('Task from the future 1'),
@@ -33,7 +33,7 @@ export const generateTasks = () => {
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit veritatis quasi minus non dignissimos ipsum vel tempore libero sint necessitatibus vero voluptatem ea nemo, esse deserunt! Quasi maxime tempora blanditiis officiis nisi a dolor perferendis distinctio asperiores nulla? Distinctio perferendis odit repellat quae aut architecto fugit nobis sapiente nesciunt.'
     ),
     newTask('Task from the future 2')
-  ]
+  ];
 
-  return [...pastTasks, ...todayTasks, ...tomorrowTasks]
-}
+  return [...pastTasks, ...todayTasks, ...tomorrowTasks];
+};

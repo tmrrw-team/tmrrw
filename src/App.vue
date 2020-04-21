@@ -12,7 +12,7 @@ export default {
     AppLayout
   }
 
-}
+};
 </script>
 
 <style lang="scss">

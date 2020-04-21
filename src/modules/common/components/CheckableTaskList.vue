@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { TmCheckbox } from '@/modules/ui-kit'
+import { TmCheckbox } from '@/modules/ui-kit';
 
 export default {
   components: {
@@ -26,7 +26,7 @@ export default {
       required: true
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
